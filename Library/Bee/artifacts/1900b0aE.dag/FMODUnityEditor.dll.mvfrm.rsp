@@ -91,10 +91,13 @@ Library\Bee\artifacts\mvdfrm\UnityEngine.VirtualTexturingModule.dll_06310386163D
 Library\Bee\artifacts\mvdfrm\UnityEngine.VRModule.dll_1D28160EA4248D28.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEngine.WindModule.dll_2EE925ABF1857344.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEngine.XRModule.dll_4FE6D9132D5EDA86.mvfrm
+<<<<<<< Updated upstream:Library/Bee/artifacts/1900b0aE.dag/FMODUnityEditor.dll.mvfrm.rsp
 Library\Bee\artifacts\mvdfrm\UnityEditor.WindowsStandalone.Extensions.dll_105CD9F8679EB2F0.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Plastic.Antlr3.Runtime.dll_07AA4D180A9594A7.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Plastic.Newtonsoft.Json.dll_84A703D70F3DBE9E.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.IonicZip.dll_49E854A63F63E154.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.YamlDotNet.dll_6B06E04781DD2568.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.TextureAssets.dll_0225099B42AA8360.mvfrm
+=======
+>>>>>>> Stashed changes:Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll.mvfrm.rsp
 Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.Antlr3.Runtime.dll_1C740728B2A63587.mvfrm
