@@ -5,7 +5,11 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< Updated upstream
       ticks: 638185463937830738
+=======
+      ticks: 638185533453251636
+>>>>>>> Stashed changes
     m_Hash: 1598079691
   m_LockFileStatus:
     m_FilePath: C:/Users/461962/Documents/GitHub/Pian-oh-/Packages/packages-lock.json
@@ -13,7 +17,11 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< Updated upstream
       ticks: 638185463937830738
+=======
+      ticks: 638185533453251636
+>>>>>>> Stashed changes
     m_Hash: 3553076896
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
