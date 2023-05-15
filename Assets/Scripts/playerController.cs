@@ -24,6 +24,8 @@ public class playerController : MonoBehaviour
     //DEBUG
     [SerializeField] float currentSpeed;
 
+    private int warpReset = 0;
+
     void Start()
     {
         playerMovement = GetComponent<CharacterController>();
@@ -31,6 +33,15 @@ public class playerController : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    void ResetSpeed()
+    {
+        playerSpeed = 3.75f;
+    }
+    void ResetWarp()
+    {
+        warpReset = 0;
     }
 
     void Update()
@@ -71,16 +82,21 @@ public class playerController : MonoBehaviour
         vectorMovement *= playerSpeed;
         if(Input.GetButton("Sprint"))
         {
-            playerSpeed = 50f;
+            playerSpeed = 6f;
         }
         if (Input.GetButtonUp("Sprint"))
         {
             playerSpeed = 3.75f;
         }
-        if(Input.GetButton("Warp"))
+        if (Input.GetButtonDown("Warp"))
         {
-            playerSpeed = 2500f;
-            playerSpeed = 3.75f;
+            if (warpReset == 0)
+            {
+                playerSpeed = 80f;
+                warpReset = 1;
+                Invoke("ResetSpeed", 0.15f);
+                Invoke("ResetWarp", 2f);
+            }
         }
 
         if(Input.GetButton("Jump") && playerMovement.isGrounded)
