@@ -1129,6 +1129,6 @@ MonoBehaviour:
   lightBehaviourComponent: {fileID: 826846614}
   playerSpeed: 3.75
   gravitySpeed: -37.64
-  jumpHeight: 1.5
+  jumpHeight: 1
   mouseSpeed: 2
   currentSpeed: 0

@@ -69,6 +69,19 @@ public class playerController : MonoBehaviour
 
         Vector3 vectorMovement = (transform.forward * zMovement) + (transform.right * xMovement);
         vectorMovement *= playerSpeed;
+        if(Input.GetButton("Sprint"))
+        {
+            playerSpeed = 50f;
+        }
+        if (Input.GetButtonUp("Sprint"))
+        {
+            playerSpeed = 3.75f;
+        }
+        if(Input.GetButton("Warp"))
+        {
+            playerSpeed = 2500f;
+            playerSpeed = 3.75f;
+        }
 
         if(Input.GetButton("Jump") && playerMovement.isGrounded)
         {
