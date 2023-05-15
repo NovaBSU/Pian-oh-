@@ -5,11 +5,13 @@ using UnityEngine;
 public class playerController : MonoBehaviour
 {
     // Objects.
+    public lightBehaviour lightBehaviourComponent;
     CharacterController playerMovement;
     Transform playerCamera;
 
     // Movement.
     [SerializeField] float playerSpeed = 3.75f;
+    Vector3 lastPostion;
 
     // Gravity
     Vector3 velocitySpeed;
@@ -18,6 +20,9 @@ public class playerController : MonoBehaviour
 
     // Mouse
     [SerializeField] float mouseSpeed = 2f;
+
+    //DEBUG
+    [SerializeField] float currentSpeed;
 
     void Start()
     {
@@ -36,10 +41,27 @@ public class playerController : MonoBehaviour
 
     void playerControls()
     {
+        if (transform.position != lastPostion && playerMovement.isGrounded)
+        {
+            lightBehaviourComponent.lightParameter(0);
+        }
+
+        else
+        {
+            lightBehaviourComponent.lightTest.intensity = 0;
+        }
+
+        if (playerMovement.isGrounded && velocitySpeed.y < -2f)
+        {
+            lightBehaviourComponent.lightParameter(1);
+        }
+
         if (playerMovement.isGrounded && velocitySpeed.y < 0)
         {
             velocitySpeed.y = 0f;
         }
+
+        lastPostion = transform.position;
 
         // Movement.
         float xMovement = Input.GetAxis("Horizontal");
