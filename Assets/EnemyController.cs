@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    
+
     public Transform player;
     private float movementSpeed = 4f;
     // Update is called once per frame
