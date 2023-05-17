@@ -31,6 +31,9 @@ public class lightBehaviour : MonoBehaviour
             case 2:
                 lightTest.range = 30f;
                 break;
+            case 3:
+                lightTest.range = 50f;
+                break;
         }
         lightAnimation.Play();
     }

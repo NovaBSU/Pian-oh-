@@ -11,7 +11,7 @@ public class playerController : MonoBehaviour
 
     // Movement.
     [SerializeField] float playerSpeed = 3.75f;
-    Vector3 lastPostion;
+    Vector3 lastPosition;
 
     // Gravity
     Vector3 velocitySpeed;
@@ -24,6 +24,12 @@ public class playerController : MonoBehaviour
     //DEBUG
     [SerializeField] float currentSpeed;
 
+    // Calls the light burst
+    public GameObject LightBurster;
+
+    // just starting the variable
+    private int warpReset = 0;
+
     void Start()
     {
         playerMovement = GetComponent<CharacterController>();
@@ -31,6 +37,16 @@ public class playerController : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+    }
+
+    void ResetSpeed()
+    {
+        playerSpeed = 3.75f;
+    }
+    void ResetWarp()
+    {
+        warpReset = 0;
     }
 
     void Update()
@@ -41,7 +57,7 @@ public class playerController : MonoBehaviour
 
     void playerControls()
     {
-        if (transform.position != lastPostion && playerMovement.isGrounded)
+        if (transform.position != lastPosition && playerMovement.isGrounded)
         {
             lightBehaviourComponent.lightParameter(0);
         }
@@ -61,7 +77,7 @@ public class playerController : MonoBehaviour
             velocitySpeed.y = 0f;
         }
 
-        lastPostion = transform.position;
+        lastPosition = transform.position;
 
         // Movement.
         float xMovement = Input.GetAxis("Horizontal");
@@ -69,6 +85,25 @@ public class playerController : MonoBehaviour
 
         Vector3 vectorMovement = (transform.forward * zMovement) + (transform.right * xMovement);
         vectorMovement *= playerSpeed;
+        if(Input.GetButton("Sprint"))
+        {
+            playerSpeed = 6f;
+        }
+        if (Input.GetButtonUp("Sprint"))
+        {
+            playerSpeed = 3.75f;
+        }
+        if (Input.GetButtonDown("Warp"))
+        {
+            if (warpReset == 0)
+            {
+                Instantiate(LightBurster, lastPosition, transform.rotation);
+                playerSpeed = 80f;
+                warpReset = 1;
+                Invoke("ResetSpeed", 0.15f);
+                Invoke("ResetWarp", 2f);
+            }
+        }
 
         if(Input.GetButton("Jump") && playerMovement.isGrounded)
         {
