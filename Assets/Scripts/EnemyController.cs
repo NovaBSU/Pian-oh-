@@ -121,7 +121,11 @@ public class EnemyController : MonoBehaviour
 
     private void createAttack()
     {
-        Instantiate(MeleeStrike, transform.position, Quaternion.identity, transform);
+        Vector3 newPlace = transform.position;
+        newPlace.y = newPlace.y + 2.4f;
+        newPlace.z = newPlace.z + 0.8f;
+        newPlace.x = newPlace.x + 0.6f;
+        Instantiate(MeleeStrike, newPlace, Quaternion.identity, transform);
     }
 
     void mAttack()

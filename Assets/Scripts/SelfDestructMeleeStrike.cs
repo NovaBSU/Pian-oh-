@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class SelfDestructMeleeStrike : MonoBehaviour
 {
-    void selfDestruct()
+    public void selfDestruct()
     {
         Destroy(gameObject);
     }
     void Start()
     {
-        Invoke("selfDestruct", 2f);
+        Invoke("selfDestruct", 1f);
     }
 
 }

@@ -30,6 +30,10 @@ public class playerController : MonoBehaviour
     // just starting the variable
     private int warpReset = 0;
 
+    // Health
+    private int pHealth = 100;
+    private bool pInvuln = false;
+
     void Start()
     {
         playerMovement = GetComponent<CharacterController>();
@@ -53,6 +57,46 @@ public class playerController : MonoBehaviour
     {
         playerControls();
         mouseControls();
+
+        if (pHealth < 1)
+        {
+            // DIE
+        }
+    }
+
+    // This function will be called from within the script that the player is hurt by.
+    // This function also handles the player's regenerative health, calling the autoHeal function.
+    // autoHeal increases the player's health by 8 (done every .25s, so 32hp/s) until the player's
+    // HP is 100 or greater, then if it is above 100 it is set to 100.
+    // This script also now gives players a half second of invulnerability, as iframes make games
+    // a whole hell of a lot more playable. (and it was buggy as all disbelief otherwise)
+    public void damage()
+    {
+        if (pInvuln == false)
+        {
+            CancelInvoke("autoHeal");
+            pHealth = pHealth - 45;
+            InvokeRepeating("autoHeal", 2.5f, 0.25f);
+            Debug.Log("Player has taken damage. Current HP: " + pHealth);
+        }
+        pInvuln = true;
+        Invoke("endIFrames", 0.5f);
+    }
+    void endIFrames()
+    {
+        pInvuln = false;
+    }
+    void autoHeal()
+    {
+        if (pHealth < 100)
+        {
+            pHealth = pHealth + 8;
+        }
+        if (pHealth > 100)
+        {
+            pHealth = 100;
+        }
+        Debug.Log("Player Healed. Current HP: " + pHealth);
     }
 
     void playerControls()
