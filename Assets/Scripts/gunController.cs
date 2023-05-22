@@ -7,9 +7,15 @@ public class gunController : MonoBehaviour
     public lightBehaviour lightBehaviourComponent;
     public lightGun lightGun;
     public GameObject lightBurstGun;
+    public AudioSource gunSound;
 
-    float FireRate = 0.5f;
+    float FireRate = 1.125f;
     private float NextFire;
+
+    void Start()
+    {
+        gunSound = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -25,7 +31,12 @@ public class gunController : MonoBehaviour
         RaycastHit Hit;
         if (Physics.Raycast(transform.position, transform.forward, out Hit, Mathf.Infinity))
         {
+            if (Hit.transform.tag == "Enemy")
+            {
+                Destroy(Hit.transform.gameObject);
+            }
             lightGun.LightRig2();
+            gunSound.Play();
         }
     }
 }
