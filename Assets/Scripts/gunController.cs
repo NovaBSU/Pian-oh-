@@ -4,31 +4,28 @@ using UnityEngine;
 
 public class gunController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public lightBehaviour lightBehaviourComponent;
+    public lightGun lightGun;
+    public GameObject lightBurstGun;
 
-    // Update is called once per frame
+    float FireRate = 0.5f;
+    private float NextFire;
+
     void Update()
     {
-        if(Input.GetButton("Fire1"))
+        if(Input.GetButton("Fire1") && Time.time > NextFire)
         {
             ShootGun();
+            NextFire = Time.time + FireRate;
         }
     }
 
     void ShootGun()
     {
         RaycastHit Hit;
-        if(Physics.Raycast(transform.position, transform.forward, out Hit, Mathf.Infinity))
+        if (Physics.Raycast(transform.position, transform.forward, out Hit, Mathf.Infinity))
         {
-            Debug.Log("Hit");
-        }
-        else
-        {
-            Debug.Log("Dont Hit");
+            lightGun.LightRig2();
         }
     }
 }
