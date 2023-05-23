@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 605f9895205151046a94111e31c20e71
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - player: {fileID: 1446367436411173452, guid: 4129af22fef29744693ac12da1930851, type: 3}
+  - MeleeStrike: {fileID: 6171449720107136102, guid: 8fb683b1aa0720640b9932d3b31a27e3, type: 3}
+  - enemyLight: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

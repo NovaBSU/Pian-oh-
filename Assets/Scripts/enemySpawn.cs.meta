@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 68f842e68f7e93c44a1daa141b77204c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - spawnPoint: {instanceID: 0}
+  - enemyPoint: {fileID: 7514180102424939001, guid: 5e60a5384d2c2694885fb237935e5c1a, type: 3}
+  - spawnPoint2: {instanceID: 0}
+  - enemyPoint2: {fileID: 7514180102424939001, guid: 5e60a5384d2c2694885fb237935e5c1a, type: 3}
+  - spawnPoint3: {instanceID: 0}
+  - enemyPoint3: {fileID: 7514180102424939001, guid: 5e60a5384d2c2694885fb237935e5c1a, type: 3}
+  - spawnPoint4: {instanceID: 0}
+  - enemyPoint4: {fileID: 7514180102424939001, guid: 5e60a5384d2c2694885fb237935e5c1a, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
